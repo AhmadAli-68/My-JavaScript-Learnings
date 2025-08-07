@@ -6,7 +6,7 @@ let state;
 
 // accountId = 2; NOT ALLOWED
 
-email = "ahamd@.com"
+email = "ahmad@.com"
 password = '2345'
 city = 'Karachi'
 
