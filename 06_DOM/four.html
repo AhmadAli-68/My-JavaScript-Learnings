@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <title>Document Object Model - 4</title>
+</head>
+
+<style>
+
+</style>
+
+<body>
+    <ul class="languages">
+        <li>JavaScript</li>
+    </ul>
+</body>
+
+<script>
+    // yeh tarika optimization k lihaz se theek nai hai, pury document me nodeList ki traversing hoti hai.
+
+    function addLanguage(langName) {
+        const li = document.createElement("li")
+        li.innerHTML = `${langName}`
+
+        document.querySelector(".languages").appendChild(li)
+    }
+
+    addLanguage("Python")
+    addLanguage("Typescript")
+
+    // Optimize tarikay se language add krna. isme aik dum se traverse kiye begair create element kr k append child use kr skty hain.
+
+    function addOptimizeLanguage(langName) {
+        const li = document.createElement("li")
+        li.appendChild(document.createTextNode(langName))
+
+        document.querySelector(".languages").appendChild(li)
+    }
+
+    addOptimizeLanguage("React")
+
+    // EDIT
+
+    const changeElement = document.querySelector("li:nth-child(2)")
+    const newLi = document.createElement("li")
+    newLi.textContent = "html"
+    changeElement.replaceWith(newLi)
+
+    // EDIT
+
+    const thirdLang = document.querySelector("li:nth-child(3)")
+    console.log(thirdLang);
+    thirdLang.outerHTML = "<li>Next.js</li>"
+
+    // REMOVE
+
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.remove()
+</script>
+</html>

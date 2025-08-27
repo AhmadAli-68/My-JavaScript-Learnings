@@ -1,0 +1,37 @@
+html {
+    margin: 0;
+}
+
+span {
+    display: block;
+}
+
+.canvas {
+    margin: 100px auto 100px;
+    text-align: center;
+    width: 80%;
+}
+
+.button {
+    width: 100px;
+    height: 100px;
+    border: 2px solid red;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#gray {
+    background: gray;
+}
+
+#wheat {
+    background: wheat;
+}
+
+#blue {
+    background: blue;
+}
+
+#purple {
+    background: purple;
+}
