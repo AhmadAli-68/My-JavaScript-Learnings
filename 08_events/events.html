@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <title>HTML Events</title>
+</head>
+
+<body>
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop"
+                    src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="japan"
+                    src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="river"
+                    src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="owl"
+                    src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="prayer"
+                    src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    // document.getElementById("owl").onclick = () => {
+    //     alert("This is owl")
+    // }
+
+    // This approach is not good and optimize because it does'nt provide much info about the element also provide less features.
+
+
+    // false -> third parameter in the addEventListener, which by default is false if we don't use it.
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement
+    // clientX, clientY, offsetX, offsetY, screenX, screenY
+    // altKey, ctrlKey, shiftKey, keyCode
+
+    // attachEvent()
+    // jQuery - "on" event listener 
+
+    // Event Propagation
+    // --> 2 contexts: Event Bubbling and Event Capturing
+    // --> most used in the market: Event Bubbling
+
+    // Bubbling kya hota hai -> nichy se upr jata.
+    // to jo bhi apka event track kr rha hai (means inside se outside) upr ki trf means pehle image, phir li and phir ul --> to yeh hota hai event propagation aur usy hi bolty hain bubbling.
+
+    // document.getElementById("images").addEventListener("click", (e) => {
+    //     console.log("Clicked inside the ul");
+    // }, false)
+
+    // document.getElementById("owl").addEventListener('click', (e) => {
+    //     console.log("Owl clicked");
+    //     e.stopPropagation() // is se propagation nai hogi.
+    // }, false)
+
+    // in the addEventListener, if the third parameter is set to true, then it will become event capturing -> top to bottom | means ---- ul -> li -> img
+
+    // document.getElementById("google").addEventListener("click", (e) => {
+    //     console.log("Google clicked.");
+    //     e.preventDefault()
+    //     // e.stopPropagation()
+    // })
+</script>
+
+<script src="event_basics.js"></script>
+</html>
