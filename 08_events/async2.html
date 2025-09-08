@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <title>Async in JavaScript</title>
+</head>
+
+<body>
+    <h1>Sheraz is my best friend.</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+
+<script>
+    const start = document.querySelector("#start")
+    const stop = document.querySelector("#stop")
+
+    let interval;
+
+    const startInterval = () => {
+        interval = setInterval(() => {
+            console.log("Interval is running...")
+        }, 1000)
+    }
+
+    const stopInterval = () => {
+        clearInterval(interval)
+        console.log("Interval is Stopped.");
+    }
+
+    start.addEventListener("click", startInterval)
+    stop.addEventListener("click", stopInterval)
+</script>
+
+</html>
