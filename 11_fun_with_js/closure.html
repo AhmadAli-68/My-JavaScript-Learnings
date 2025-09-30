@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <title>Closure in JavaScript</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    // function init() {
+    //     let name = "Mozilla"; // name is a local variable created by init
+    //     function displayName() {
+    //         // displayName() is the inner function, that forms a closure
+    //         console.log(name); // use variable declared in the parent function
+    //     }
+    //     displayName();
+    // }
+    // init();
+
+    // inner Function inside the outer function always have the access to the scope variables of that outer function. isi ko hum lexical scoping kehty hain
+
+    // in the example below -->
+
+    // inner aur innerTwo functions k pas outer scope ka access hoga.
+    
+    // inner aur innerTwo functions apas me kuch bhi share nai kr skty
+
+    // outer function k pas inner functions ka access nai hota
+
+    // in more simple words, children parents se le skty hain, mgr parent children se kuch nai le skta, and in most of the cases, children as siblings apas me bhi sharing nai kr skty. 
+
+    function outer() {
+        let username = 'Ahmad'
+
+        function inner() {
+            console.log('Inner', username)
+        }
+
+        function innerTwo() {
+            console.log('Inner Two: ', username)
+        }
+        inner()
+        innerTwo()
+    }
+    outer()
+    console.log('Too Outer', username)
+</script>
+
+</html>
